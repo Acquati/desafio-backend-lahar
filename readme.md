@@ -1,11 +1,18 @@
-# DOCKER LEMP
+# Exercício do processo seletivo da Lahar
+
+## DOCKER LEMP
+
+[https://github.com/atillay/docker-lemp](https://github.com/atillay/docker-lemp)
+
 - Nginx
 - PHP 7.2-fpm
 - MySQL
 - PHPMyAdmin
 - Maildev
+- CodeIgniter
 
-## :rocket: Quickstart 
+## :rocket: Quickstart
+
 - Install and launch Docker  
 - `cp .env.dist .env`  
 - `docker-compose up`
@@ -18,9 +25,11 @@
 | Logs         | `log/`                  |
 
 ## :whale: Docker images
+
 https://github.com/atillay/docker-images/tree/master/lemp
 
 ## :tent: Use a virtual host
+
 - On your machine, run `$ sudo nano /etc/hosts` and add `127.0.0.1   myhost.local`
 - Change the server name in `docker/nginx/nginx.conf#L3` to `myhost.local`
 - Modify `.env` and set `SERVER_PORT=80`
@@ -28,7 +37,9 @@ https://github.com/atillay/docker-images/tree/master/lemp
 - If it fails make sure no service like Apache is running on port 80 
 
 ## About MySQL credentials
+
 If you change mysql credentials in .env you have to re-create mysql container:
+
 - Database will be deleted, make a dump with PhpMyAdmin
 - Remove container and volume : `$ docker-compose rm -fv mysql`
 - Run : `docker-compose up` 
