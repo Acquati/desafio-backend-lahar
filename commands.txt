@@ -1,0 +1,55 @@
+# Up containers quiet
+docker-compose up -d
+# Down containers
+docker-compose down
+
+# Enter lahar_mariadb_1 container
+docker exec -it teste-lahar_mariadb_1 bash
+
+# Login root mysql
+mysql -u root -p
+
+# Showing all databases
+show databases;
+
+# Creating new database
+CREATE DATABASE bitnami_app;
+
+# Select which database you will use
+USE bitnami_app;
+
+# Show colums in the database
+show columns in dados_exercicio;
+
+# Get a list of all columns and rows in a table
+SELECT * FROM dados_exercicio;
+SELECT * FROM resultado;
+
+# Deleting database
+DROP DATABASE bitnami_app;
+
+# Create user
+CREATE USER bn_app@mariadb IDENTIFIED BY 'oUp9bAkI42';
+
+# Delete user
+DROP USER bn_app;
+
+# List users and host
+SELECT host, user FROM mysql.user;
+
+# Granting access to user for a database
+GRANT ALL PRIVILEGES ON bitnami_app.* to 'bn_app'@'mariadb';
+
+# Provide access to all databases
+GRANT ALL PRIVILEGES ON *.* to 'bn_app'@'mariadb';
+GRANT ALL PRIVILEGES ON *.* to 'bn_app'@'172.20.0.2';
+
+# Login with the user
+mysql -h mariadb -u bn_app -poUp9bAkI42 bitnami_app
+
+# Create table
+CREATE TABLE `stud` (`roll_no` INT(11), `name` VARCHAR(30)) ENGINE = InnoDB;
+
+sudo code --user-data-dir="~/.vscode-root"
+sudo systemctl restart php7.2-fpm
+sudo service nginx restart
