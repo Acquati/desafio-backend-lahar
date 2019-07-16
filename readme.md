@@ -1,6 +1,7 @@
 # Exercício do processo seletivo da Lahar
 
 Exercício de comparação de vetores e inserção em um banco de dados MySQL.
+
 (Adicional) CRUD de exemplo do [CodeIgniter](https://www.tutorialspoint.com/codeigniter/working_with_database.htm).
 
 ## :rocket: Setup
