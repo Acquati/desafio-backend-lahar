@@ -9,23 +9,21 @@ class Exercicio_lahar_model extends CI_Model
 
 	public function consultar_tem_palavras($valor)
 	{
-    $valor['correto'] = 0;
+		$valor1 = explode(' ', strtolower($valor['tentativa']));
+		$valor2 = array();
+		$query = $this->db->get("dados_exercicio");
+		foreach ($query->result() as $r) {
+			array_push($valor2, $r->valor);
+		}
+
+		if (!count($valor1) || !count($valor2) || count(array_diff($valor1, $valor2))) {
+			$valor['correto'] = 'N';
+		} else {
+			$valor['correto'] = 'S';
+		}
+
 		if ($this->db->insert("resultado", $valor)) {
 			return true;
 		}
 	}
-
-	// public function delete($roll_no)
-	// {
-	// 	if ($this->db->delete("stud", "roll_no = " . $roll_no)) {
-	// 		return true;
-	// 	}
-	// }
-
-	// public function update($data, $old_roll_no)
-	// {
-	// 	$this->db->set($data);
-	// 	$this->db->where("roll_no", $old_roll_no);
-	// 	$this->db->update("stud", $data);
-	// }
 }

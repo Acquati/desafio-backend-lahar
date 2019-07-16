@@ -6,18 +6,17 @@ class Exercicio_lahar extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->helper('form');
 	}
 
 	public function formulario_teste_lahar()
 	{
+		$query = $this->db->get("resultado");
+		$data['resultado'] = $query->result();
+		
 		$query = $this->db->get("dados_exercicio");
 		$data['dados_exercicio'] = $query->result();
 
-		$query = $this->db->get("resultado");
-		$data['resultado'] = $query->result();
-
-		$this->load->helper('url');
-		$this->load->helper('form');
 		$this->load->view('form', $data);
 	}
 
@@ -29,14 +28,12 @@ class Exercicio_lahar extends CI_Controller
 	
 		$this->Exercicio_lahar_model->consultar_tem_palavras($valor);
 
-		$query = $this->db->get("dados_exercicio");
-		$data['dados_exercicio'] = $query->result();
-
 		$query = $this->db->get("resultado");
 		$data['resultado'] = $query->result();
 
-		$this->load->helper('url');
-		$this->load->helper('form');
+		$query = $this->db->get("dados_exercicio");
+		$data['dados_exercicio'] = $query->result();
+
 		$this->load->view('form', $data);
 	}
 }

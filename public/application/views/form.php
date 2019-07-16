@@ -30,7 +30,7 @@
       echo "<tr>";
       echo "<td>" . $r->id . "</td>";
       echo "<td>" . $r->tentativa . "</td>";
-      if($r->correto) {
+      if($r->correto == 'S') {
         echo "<td>Contém todas as palavras.</td>";
       } else {
         echo "<td>Não contém todas as palavras.</td>";

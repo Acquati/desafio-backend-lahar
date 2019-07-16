@@ -1,6 +1,22 @@
 # Exercício do processo seletivo da Lahar
 
-## DOCKER LEMP
+## :rocket: Setup
+
+- Instale o [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) e o [Docker Compose](https://docs.docker.com/compose/install/)
+- `git clone https://github.com/Acquati/teste-lahar.git`
+- `cd teste-lahar`
+- `cp .env.dist .env`
+- `docker-compose up`
+- Executar comandos SQL na base de dados dbname: **exercicio.sql**
+
+| Service      | Path                    |
+| ------------ | ----------------------- |
+| Website      | `http://localhost:8080` |
+| PhpMyAdmin   | `http://localhost:8081` |
+| Mail catcher | `http://localhost:8082` |
+| Logs         | `log/`                  |
+
+## Docker LEMP
 
 [https://github.com/atillay/docker-lemp](https://github.com/atillay/docker-lemp)
 
@@ -11,22 +27,9 @@
 - Maildev
 - CodeIgniter
 
-## :rocket: Quickstart
-
-- Install and launch Docker  
-- `cp .env.dist .env`  
-- `docker-compose up`
-
-| Service      | Path                    |
-| ------------ | ----------------------- |
-| Website      | `http://localhost:8080` | 
-| PhpMyAdmin   | `http://localhost:8081` |
-| Mail catcher | `http://localhost:8082` |
-| Logs         | `log/`                  |
-
 ## :whale: Docker images
 
-https://github.com/atillay/docker-images/tree/master/lemp
+[https://github.com/atillay/docker-images/tree/master/lemp](https://github.com/atillay/docker-images/tree/master/lemp)
 
 ## :tent: Use a virtual host
 
