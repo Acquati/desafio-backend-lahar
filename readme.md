@@ -1,5 +1,8 @@
 # Exercício do processo seletivo da Lahar
 
+Exercício de comparação de vetores e inserção em um banco de dados MySQL.
+(Adicional) CRUD de exemplo do [CodeIgniter](https://www.tutorialspoint.com/codeigniter/working_with_database.htm).
+
 ## :rocket: Setup
 
 - Instale o [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) e o [Docker Compose](https://docs.docker.com/compose/install/)
