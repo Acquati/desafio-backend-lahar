@@ -34,7 +34,7 @@ Exercício de comparação de vetores e inserção em um banco de dados MySQL.
 
 [https://github.com/atillay/docker-images/tree/master/lemp](https://github.com/atillay/docker-images/tree/master/lemp)
 
-## :tent: Use a virtual host
+### (Opcional) :tent: Use a virtual host
 
 - On your machine, run `$ sudo nano /etc/hosts` and add `127.0.0.1   myhost.local`
 - Change the server name in `docker/nginx/nginx.conf#L3` to `myhost.local`
@@ -42,7 +42,7 @@ Exercício de comparação de vetores e inserção em um banco de dados MySQL.
 - Run `$ docker-compose up`
 - If it fails make sure no service like Apache is running on port 80 
 
-## About MySQL credentials
+### (Opcional) About MySQL credentials
 
 If you change mysql credentials in .env you have to re-create mysql container:
 
